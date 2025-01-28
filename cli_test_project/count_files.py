@@ -1,5 +1,6 @@
 import os
 
+
 def count_files(folder):
     items = os.listdir(folder)
     count = 0

@@ -2,7 +2,7 @@ import os
 import shutil
 
 
-def delete_file (path):
+def delete_file(path):
     print(f'test-delete-file {path}')
 
     if os.path.isfile(path):
