@@ -1,7 +1,7 @@
 import os
 import shutil
 import unittest
-from cli_test_project.manager import main
+from cli_test_project.copy import copy_file
 
 
 class TestFileOperations(unittest.TestCase):
@@ -18,9 +18,7 @@ class TestFileOperations(unittest.TestCase):
             shutil.rmtree(self.root_path)
 
     def test_copy(self):
-        main(['--command', 'copy',
-              '--source', os.path.join(self.root_path, 'test_file1.txt'),
-              '--dst', os.path.join(self.root_path,'test_new.txt')])
+        copy_file(os.path.join(self.root_path, 'test_file1.txt'), os.path.join(self.root_path,'test_new.txt'))
 
         self.assertTrue(os.path.exists(os.path.join(self.root_path,'test_new.txt')))
 
