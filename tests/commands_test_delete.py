@@ -2,7 +2,7 @@ import os
 import shutil
 import unittest
 
-from cli_test_project.manager import main
+from cli_test_project.delete import delete_file
 
 
 class TestFileOperations(unittest.TestCase):
@@ -20,14 +20,13 @@ class TestFileOperations(unittest.TestCase):
         if os.path.exists(self.test_dir):
             shutil.rmtree(self.test_dir)
 
- # Delete file
     def test_delete_file(self):
 # Make sure the file exists before deleting
         self.assertTrue(os.path.exists(self.test_file))
 
         # run command delete
-        main(['--command', 'delete',
-              '--path', self.test_file])
+
+        delete_file (self.test_file)
 
 # check for file deleted
         self.assertFalse(os.path.exists(self.test_file))
