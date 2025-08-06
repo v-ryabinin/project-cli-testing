@@ -7,3 +7,7 @@ A simple command-line tool to manage files and folders
 - 'delete <path>': Delete a file or folder.
 - 'count <folder> : Count the number of files in a folder.
 -  <path> Path to file
+
+
+## GUI added 
+# CD Project dir/gui
