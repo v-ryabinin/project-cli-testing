@@ -1,0 +1,11 @@
+setup.py
+cli_test_project/__init__.py
+cli_test_project/copy.py
+cli_test_project/manager.py
+cli_test_project.egg-info/PKG-INFO
+cli_test_project.egg-info/SOURCES.txt
+cli_test_project.egg-info/dependency_links.txt
+cli_test_project.egg-info/top_level.txt
+tests/__init__.py
+tests/conftest.py
+tests/test_foo.py
