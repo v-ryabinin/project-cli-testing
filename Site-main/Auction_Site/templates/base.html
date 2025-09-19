@@ -1,0 +1,58 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">    
+<head>  
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial -scale=1.0"> -->
+
+    <title>Bid-Bound</title>
+
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" />
+
+<!-------------------------------------------------------------------------->
+
+    <link href="{% static 'styles/style.css'%}" rel="stylesheet" type="text/css" >
+
+    <link href="{% static 'styles/1_header_style.css'%}" rel="stylesheet" type="text/css" >
+    <link href="{% static 'styles/2_footer_style.css'%}" rel="stylesheet" type="text/css" >
+    <link href="{% static 'styles/3_dialogue.css'%}" rel="stylesheet" type="text/css" >
+
+    {% block style %}
+    {% endblock %}
+
+<!-------------------------------------------------------------------------->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabriela&family=Ojuju:wght@200..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header class="site-header">
+        {% include "auxiliary/header.html" %}
+    </header>
+
+<!-------------------------------------------------------------------------->
+
+    <main>
+        <div class="dialogue">
+            {% include "auxiliary/dialogue.html" %}
+        </div>
+
+            {% block content %}
+            {% endblock %}
+            
+    </main>
+
+<!-------------------------------------------------------------------------->
+
+    <footer>
+        {% include "auxiliary/footer.html" %}
+    </footer>
+
+
+    <script type="text/javascript"  src="{% static 'js/header_footer.js'%}"></script>
+
+</body>
+</html>

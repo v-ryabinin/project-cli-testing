@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+    <link href="{% static 'styles/info_style.css'%}" rel="stylesheet" type="text/css" >
+{% endblock %}
+
+{% block content %}
+
+    <div class="info">
+        <article>
+            <h2>О нас</h2>
+            <p>
+               Добро пожаловать на уникальный аукцион, где вы найдете редкие лоты и захватывающие торги. Находите, предлагайте и побеждайте — ваша следующая ценная находка уже ждет вас.
+            </p>
+        </article>
+    </div>
+
+{% endblock %}
