@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+    <link href="{% static 'styles/auction_style.css'%}" rel="stylesheet" type="text/css" >
+{% endblock %}
+
+{% block content %}
+
+    {% if user.is_authenticated %}
+
+            {% if type == 'auction' %}
+                <div class="lots">
+                    {% include "auction/lots.html" %}
+                </div>
+            {% elif type == 'product' %}
+                {% include "auction/product.html" %}
+            {%endif%}
+
+    {% else %}
+
+        <div class="inscription">
+
+            <p>Вы не верефецированны, зарегестрируйтесь или войдите в аккаунт</p>
+        
+        </div>
+
+    {%endif%}
+
+{% endblock %}
