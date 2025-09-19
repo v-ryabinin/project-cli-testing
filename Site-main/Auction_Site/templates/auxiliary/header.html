@@ -1,0 +1,53 @@
+{% load static %}
+
+<nav class="wrapper site-header__wrapper">
+    <div class="link step"><a href='{% url "main_menu" %}'><h1> <img src="{% static 'images/application-logo(512x512).png' %}" width="50" height="50" alt="Логатип" /> Bid Bound
+    </h1></a></div>
+
+    <button class="nav__toggle" aria-expanded="false" type="button">
+    <img src="{% static 'images/button_menu.png' %}" width="30" height="30" alt="menu">
+    </button>
+
+    <ul class="link nav__wrapper">
+
+        <li><a href='{% url "lots" %}'>Аукционы></a></li>
+        <li><a href='{% url "orders" %}'>Заказы></a></li>
+
+        <li><div class = 'vr'></div></li>
+
+        <li><a href='{% url "About_Us" %}'>О нас></a></li>
+        <li><a href='{% url "Projects" %}'>Проэкты></a></li>
+        <li><a href='{% url "Terms_of_use" %}'>
+            Пользовательское<br>соглашение>
+        </a></li>
+    
+        <li><div class = 'vr'></div></li>
+
+        {% if user.is_authenticated %}
+
+            <li><a class="profile" href="#profile_menu">
+
+                <img class="profile_ico" src="{% static 'images/profile_menu.png' %}" alt="profile_menu" width="50" height="50">
+
+                <p class="name">{{user.username}}</p>
+            
+            </a></li>
+
+
+        {% else %}
+        
+                <li><div class="list_button flex">
+                    <form action="{% url 'login' %}">
+                        <button class="login_button" type="submit">Войти</button>
+                    </form>
+
+                    <form action="{% url 'register' %}">
+                        <button class="register_button" type="submit">Зарегистрироваться</button>
+                    </form>
+
+                </div></li>
+
+        {%endif%}
+
+    </ul>
+</nav>

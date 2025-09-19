@@ -1,0 +1,22 @@
+{% load static %}
+
+
+<div class="inscription">
+    {% for i in lots %}
+
+        {% if not i.end %}
+            <a href="{{ i.name }}" class="product flex">
+
+                    <img src='{{ i.path.url }}' alt="картинка лота" width="100" height="100">
+
+                    <p>{{ i.name }}</p><hr>
+                    <p>Доступен до: {{ i.end_time }}</p><hr>
+                    <p>Цена: {{ i.price }}₽</p>
+
+            </a>
+
+        {% endif %}
+
+    {%endfor%}
+</div>
+
